@@ -2,8 +2,10 @@ import { staticPlugin } from "@elysiajs/static";
 import { Elysia } from "elysia";
 import { queryListPals } from "./schemas";
 import { ListPalsUseCase } from "./useCases";
+import { cors } from '@elysiajs/cors'
 
 const app = new Elysia()
+  .use(cors())
   .use(staticPlugin())
   .get(
     "/",
